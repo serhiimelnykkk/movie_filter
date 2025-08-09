@@ -1,0 +1,10 @@
+.wrapper {
+    composes: wrapper from "../../styles/shared.module.css";
+    flex-wrap: nowrap;
+    position: fixed;
+    bottom: 2%;
+    left: 50%;
+    width: 150px;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}

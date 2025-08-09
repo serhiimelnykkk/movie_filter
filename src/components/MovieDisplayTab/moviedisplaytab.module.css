@@ -1,0 +1,6 @@
+.movieDisplayTabContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,35 @@
+.primaryElement {
+    background-color: rgba(54, 54, 54, 0.8);
+    border-radius: 3px;
+    border: 1px solid rgb(19, 19, 19);
+    color: white;
+    min-height: 38px;
+    padding: 5px 10px;
+    font-size: 14px;
+    transition: border 0.2s ease-in-out;
+    backdrop-filter: blur(20px);
+}
+
+.primaryElement:hover {
+    border: 1px solid rgb(147, 147, 147);
+}
+
+.p {
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.wrapper {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.wrapper * {
+    width: 100%;
+}

@@ -1,0 +1,31 @@
+.form {
+    max-width: 100%;
+}
+
+.container {
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, 300px);
+    max-width: 100%;
+    gap: 10px;
+    align-items: start;
+    max-height: 153px;
+    transition: max-height 0.3s, opacity 0.3s;
+}
+
+.flex {
+    display: flex;
+    gap: 5px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+.hidden {
+    opacity: 0;
+    max-height: 0;
+}

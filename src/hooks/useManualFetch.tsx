@@ -1,9 +1,14 @@
 import { useRef, useState } from "react";
 
-export default function useManualFetch<T>(
-  url: string,
-  options: object
-): {
+interface useManualFetchProps {
+  url: string;
+  options: object;
+}
+
+export default function useManualFetch<T>({
+  url,
+  options,
+}: useManualFetchProps): {
   data: T | null;
   error: string | null;
   loading: boolean;

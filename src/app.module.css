@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(40, 40, 40);
+}
+
+.container {
+    padding: 0 30px;
+}
+
+.menuBarContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+}
+
+@media (max-width: 720px) {
+    .menuBarContainer {
+        justify-content: center;
+    }
+}

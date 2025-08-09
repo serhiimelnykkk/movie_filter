@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 
-export default function useFetch<T>(
-  url: string,
-  options: object
-): [T | null, string | null, boolean] {
+interface useFetchProps {
+  url: string;
+  options: object;
+}
+
+export default function useFetch<T>({ url, options }: useFetchProps): {
+  data: T | null;
+  error: string | null;
+  loading: boolean;
+} {
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     setError(null);
     setData(null);
-    setLoading(true);
     const abortController = new AbortController();
     fetch(url, { ...options, signal: abortController.signal })
       .then((res) => res.json())
@@ -20,11 +25,13 @@ export default function useFetch<T>(
         if (err.name !== "AbortError") {
           setError(err);
         }
-      });
-    setLoading(false);
+      })
+      .finally(() => setLoading(false));
+
+    console.log(url);
 
     return () => abortController.abort();
   }, [url, options]);
 
-  return [data, error, loading];
+  return { data, error, loading };
 }
